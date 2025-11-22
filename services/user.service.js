@@ -6,7 +6,6 @@ const { BadRequestError } = require('../errors');
 
 async function updateUser(id, userUpdateDto) {
     userUpdateDto.password = await bcrypt.hash(userUpdateDto.password, await bcrypt.genSalt())
-    console.log(userUpdateDto)
     let [count, updatedUser] = await userRepository.updateUser(id, userUpdateDto)
     updatedUser = updatedUser.map(user => UserDto.parse(user))
     return {count, updatedUser}

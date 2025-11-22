@@ -6,7 +6,6 @@ async function createTask(createTaskDto, userId) {
 }
 
 async function getAllTasks(page, pageSize, order) {
-    console.log(order)
     return await Task.findAll({ limit: pageSize, offset: (page - 1) * pageSize, order: [['createdAt', order]] })
 }
 
