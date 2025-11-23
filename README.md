@@ -4,6 +4,7 @@
 - Aplikacija je **dokerizovana** i može se pokrenuti komandom **docker compose up**. Pokrenuće se backend API i PostgreSQL baza.
 - Za **pokretanje testova** potrebno je:
   - Pokrenuti instancu baze preko Docker-a i kreirati bazu za testove.
+  - Pokrenuti **npm install** komandu.
   - Podesiti kredencijale i konfiguraciju baze u **.env.test** fajlu.
     - `DB_HOST` – adresa baze (npr. localhost)
     - `DB_PORT` – port baze (npr. 5432)
@@ -15,6 +16,7 @@
   - Pokrenuti testove **npm run test** komandom.
 - Aplikacija može da se **pokrene i van Docker-a, direktno iz terminala,** i potrebno je:
   - Pokrenuti instancu baze preko Docker-a i kreirati bazu.
+  - Pokrenuti **npm install** komandu (ako nije pokrenuta ranije).
   - Podesiti kredencijale i konfiguraciju baze u **.env.development** fajlu.
   - Pokrenuti komandom **npm run dev**
 
