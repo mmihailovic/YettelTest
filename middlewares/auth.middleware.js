@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-module.exports = (role) => {
+module.exports = (...roles) => {
     return (req, res, next) => {
         let authHeader = req.headers.authorization;
 
@@ -13,10 +13,9 @@ module.exports = (role) => {
         }
 
         try {
-            // const decoded = jwt.verify(token, process.env.JWT_SECRET);
-            const decoded = jwt.verify(authHeader, "MY JWT SECRET")
+            const decoded = jwt.verify(authHeader, process.env.JWT_SECRET)
 
-            if(role !== decoded.role) {
+            if(!roles.includes(decoded.role)) {
                 return res.status(403).json({ message: 'Unauthorized!' });
             }
 
