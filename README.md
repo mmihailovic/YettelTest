@@ -1,7 +1,7 @@
 > **Napomena: .env fajlove sam pushovao radi lakšeg pregledanja, znam da ne bi trebalo.**
 
 # Uputstvo za pokretanje
-- Aplikacija je **dokerizovana** i može se pokrenuti komandom **docker compose up**.
+- Aplikacija je **dokerizovana** i može se pokrenuti komandom **docker compose up**. Pokrenuće se backend API i PostgreSQL baza.
 - Za **pokretanje testova** potrebno je:
   - Pokrenuti instancu baze preko Docker-a i kreirati bazu za testove.
   - Podesiti kredencijale i konfiguraciju baze u **.env.test** fajlu.
