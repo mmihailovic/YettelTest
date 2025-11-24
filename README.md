@@ -3,14 +3,14 @@
 # Uputstvo za pokretanje
 - Aplikacija je **dokerizovana** i može se pokrenuti komandom **docker compose up**. Pokrenuće se backend API i PostgreSQL baza.
 - Za **pokretanje testova** potrebno je:
-  - Pokrenuti instancu baze preko Docker-a i kreirati bazu za testove.
+  - Pokrenuti instancu baze preko Docker-a i kreirati bazu za testove sa CREATE DATABASE [naziv_baze].
   - Pokrenuti **npm install** komandu.
   - Podesiti kredencijale i konfiguraciju baze u **.env.test** fajlu.
+    - `DB_NAME` – naziv baze
+    - `DB_USERNAME` – username za pristup bazi
+    - `DB_PASSWORD` – password za pristup bazi
     - `DB_HOST` – adresa baze (npr. localhost)
     - `DB_PORT` – port baze (npr. 5432)
-    - `DB_USER` – username za pristup bazi
-    - `DB_PASSWORD` – password za pristup bazi
-    - `DB_NAME` – naziv baze
     - `DB_DIALECT` – (npr. `postgres`)
   - Trebalo bi da može da se koristi bilo koja relaciona baza, ali sam testirao samo sa PostgreSQL-om.
   - Pokrenuti testove **npm run test** komandom.
